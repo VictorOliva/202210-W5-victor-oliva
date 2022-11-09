@@ -5,3 +5,9 @@ export const arrayLength = (array) => {
     }
     return counter;
 };
+
+export const myPush = (array, element) => {
+    let j = arrayLength(array);
+    array[j] = element;
+    return arrayLength(array);
+};

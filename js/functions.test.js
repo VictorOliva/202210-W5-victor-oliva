@@ -55,3 +55,29 @@ describe('Given arrayLength funtion', () => {
         });
     });
 });
+
+import { myPush } from './functions.js';
+describe('Given myPush funtion', () => {
+    let arrayToBePush;
+
+    describe('When arguments is an array [2,5,10,25 pepe,] and push 12 ', () => {
+        beforeEach(() => {
+            arrayToBePush = [2, 5, 10, 25, 'pepe'];
+        });
+        test('Then result array length should be 6', () => {
+            const expected = 6;
+            const result = myPush(arrayToBePush, 12);
+            expect(result).toBe(expected);
+        });
+    });
+    describe('When arguments is an array [2,5,10,25 pepe,] and push 12', () => {
+        beforeEach(() => {
+            arrayToBePush = [2, 5, 10, 25, 'pepe'];
+        });
+        test('Then result elements should be [2, 5, 10, 25, pepe, 12]', () => {
+            const expected = console.log([2, 5, 10, 25, 'pepe', 12]);
+            const result = console.log(myPush(arrayToBePush, 12));
+            expect(result).toBe(expected);
+        });
+    });
+});

@@ -7,7 +7,12 @@ export const arrayLength = (array) => {
 };
 
 export const myPush = (array, element) => {
-    let j = arrayLength(array);
-    array[j] = element;
+    let newArray = arrayLength(array);
+    array[newArray] = element;
+    return arrayLength(array);
+};
+
+export const myUnshift = (array, element) => {
+    array = myPush(element, array);
     return arrayLength(array);
 };

@@ -56,7 +56,6 @@ describe('Given arrayLength funtion', () => {
     });
 });
 
-import { myPush } from './functions.js';
 describe('Given myPush funtion', () => {
     let arrayToBePush;
 
@@ -77,6 +76,31 @@ describe('Given myPush funtion', () => {
         test('Then result elements should be [2, 5, 10, 25, pepe, 12]', () => {
             const expected = console.log([2, 5, 10, 25, 'pepe', 12]);
             const result = console.log(myPush(arrayToBePush, 12));
+            expect(result).toBe(expected);
+        });
+    });
+});
+
+describe('Given myUnshift funtion', () => {
+    let arrayToBeUnshift;
+
+    describe('When arguments is an array [2, 5, 10, 25, pepe] and unshift 33 ', () => {
+        beforeEach(() => {
+            arrayToBeUnshift = [2, 5, 10, 25, 'pepe'];
+        });
+        test('Then result array length should be 6', () => {
+            const expected = 6;
+            const result = myUnshift(arrayToBeUnshift, 33);
+            expect(result).toBe(expected);
+        });
+    });
+    describe('When arguments is an array [2, 5 ,10 ,25 , pepe] and unshift 33', () => {
+        beforeEach(() => {
+            arrayToBeUnshift = [2, 5, 10, 25, 'pepe'];
+        });
+        test('Then result elements should be [33, 2, 5, 10, 25, pepe]', () => {
+            const expected = console.log([33, 2, 5, 10, 25, 'pepe']);
+            const result = console.log(myPush(arrayToBeUnshift, 33));
             expect(result).toBe(expected);
         });
     });
